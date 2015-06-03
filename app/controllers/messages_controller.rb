@@ -13,7 +13,7 @@ class MessagesController < ApplicationController
     @message = current_user.sendmessages.create(permitted_params[:message].merge!(sender_id: current_user.id))
     if  @message.save
       flash[:notice] = "Message sent!"
-      redirect_to @message
+      redirect_to "show"
     else
       flash[:error] = @message.errors.full_messages.to_sentence
       render "new"
@@ -25,7 +25,7 @@ class MessagesController < ApplicationController
   end
 
   def show
-    @allmessage = current_user.sendmessages + current_user.recivmessages
+    @allmessages = current_user.sendmessages + current_user.recivmessages
   end
 
   def outbox

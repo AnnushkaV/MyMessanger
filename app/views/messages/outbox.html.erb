@@ -6,8 +6,10 @@
     <ol class="messages">
       <% @outmessage.each do |outmessage| %>
           <li>
-            <span class="reciver">Reciver: <%= outmessage.reciver.name %></span>&nbsp&nbsp
-            <span class="content">Text: <%= outmessage.body %></span>
+            <span class="sender">From:<%= outmessage.sender.name %> =></span>
+            <span class="reciver">To: <%= outmessage.reciver.name %></span>&nbsp &nbsp &nbsp
+            <span class="content">Text: <%= outmessage.body %></span>&nbsp &nbsp &nbsp
+            <span class="create">Create: <%= outmessage.created_at %></span>
           </li>
       <% end %>
     </ol>

@@ -6,8 +6,8 @@ class UsersControllerTest < ActionController::TestCase
     assert_response :success
   end
 
-  test "should get show" do
-    get :show
+  test "should get allmes" do
+    get :allmes
     assert_response :success
   end
 

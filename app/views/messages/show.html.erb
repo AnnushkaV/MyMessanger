@@ -4,13 +4,18 @@
 
 <h3>ALL messages</h3>
 
-<% if current_user.sendmessages.any? %>
-  <ol class="messages">
-    <% @allmessage.each do |message| %>
+
+  <ul class="messages">
+    <% @allmessages.each do |message| %>
       <li>
-        <span class="content"><%= message.body %></span>
-        <span class="reciver"><%= message.reciver.name %></span>
+
+        <span class="sender">From: <%= message.sender.name %>=></span>&nbsp &nbsp &nbsp
+        <span class="reciver">To: <%= message.reciver.name %></span> &nbsp &nbsp &nbsp
+        <span class="content"><%= message.body %></span>&nbsp &nbsp
+        <span class="create">Create: <%= message.created_at %></span>
       </li>
     <% end %>
-  </ol>
-<% end %>
+  </ul>
+
+
+
