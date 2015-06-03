@@ -1,0 +1,14 @@
+<p>Find me in app/views/message/show.html.erb</p>
+<p>Find me in app/views/message/show.html.erb</p>
+
+<h3>OUT messages</h3>
+
+    <ol class="messages">
+      <% @outmessage.each do |outmessage| %>
+          <li>
+            <span class="reciver">Reciver: <%= outmessage.reciver.name %></span>&nbsp&nbsp
+            <span class="content">Text: <%= outmessage.body %></span>
+          </li>
+      <% end %>
+    </ol>
+

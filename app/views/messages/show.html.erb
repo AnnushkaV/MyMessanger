@@ -1,0 +1,16 @@
+
+<p>Find me in app/views/message/show.html.erb</p>
+<p>Find me in app/views/message/show.html.erb</p>
+
+<h3>ALL messages</h3>
+
+<% if current_user.sendmessages.any? %>
+  <ol class="messages">
+    <% @allmessage.each do |message| %>
+      <li>
+        <span class="content"><%= message.body %></span>
+        <span class="reciver"><%= message.reciver.name %></span>
+      </li>
+    <% end %>
+  </ol>
+<% end %>
